@@ -9,6 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{34C0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "src\Catalog\Catalog.API\Catalog.API.csproj", "{3AA69E57-F9EF-4BD7-97D1-A363CFC3D1CD}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D67435E5-D9DE-43FC-AD9F-75C4113196FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{4E44DE0A-F7F6-48D6-82F8-3B9EB65AA380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "src\Basket\Basket.API\Basket.API.csproj", "{9F557415-A0A0-4557-A8DB-17F826F20FC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +25,14 @@ Global
 		{3AA69E57-F9EF-4BD7-97D1-A363CFC3D1CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AA69E57-F9EF-4BD7-97D1-A363CFC3D1CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AA69E57-F9EF-4BD7-97D1-A363CFC3D1CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D67435E5-D9DE-43FC-AD9F-75C4113196FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D67435E5-D9DE-43FC-AD9F-75C4113196FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D67435E5-D9DE-43FC-AD9F-75C4113196FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D67435E5-D9DE-43FC-AD9F-75C4113196FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F557415-A0A0-4557-A8DB-17F826F20FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F557415-A0A0-4557-A8DB-17F826F20FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F557415-A0A0-4557-A8DB-17F826F20FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F557415-A0A0-4557-A8DB-17F826F20FC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -29,5 +43,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{34C016EF-1BB8-4167-AF6F-3DAFA13CA3AA} = {AA033194-50DD-4949-9C14-7C39348F657F}
 		{3AA69E57-F9EF-4BD7-97D1-A363CFC3D1CD} = {34C016EF-1BB8-4167-AF6F-3DAFA13CA3AA}
+		{4E44DE0A-F7F6-48D6-82F8-3B9EB65AA380} = {AA033194-50DD-4949-9C14-7C39348F657F}
+		{9F557415-A0A0-4557-A8DB-17F826F20FC1} = {4E44DE0A-F7F6-48D6-82F8-3B9EB65AA380}
 	EndGlobalSection
 EndGlobal
