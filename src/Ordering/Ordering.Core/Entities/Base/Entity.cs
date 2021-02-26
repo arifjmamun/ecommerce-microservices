@@ -1,0 +1,10 @@
+﻿using System;
+namespace Ordering.Core.Entities.Base
+{
+    public abstract class Entity : EntityBase<int>
+    {
+        public Entity()
+        {
+        }
+    }
+}
