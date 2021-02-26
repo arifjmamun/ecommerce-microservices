@@ -33,6 +33,7 @@ namespace EventBus.Producers
             {
                 Console.WriteLine("Sent RabbitMQ");
             };
+            channel.ConfirmSelect();
         }
     }
 }

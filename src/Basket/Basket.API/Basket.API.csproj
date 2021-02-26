@@ -19,4 +19,9 @@
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\Interfaces\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\EventBus\EventBus.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
