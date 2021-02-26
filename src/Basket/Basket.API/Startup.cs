@@ -7,6 +7,7 @@ using Basket.API.Data.Interfaces;
 using Basket.API.Repositories;
 using Basket.API.Repositories.Interfaces;
 using EventBus;
+using EventBus.Producers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,14 +34,12 @@ namespace Basket.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
             services.AddSingleton(sp =>
             {
                 var configuration = ConfigurationOptions.Parse(Configuration.GetConnectionString("Redis"), true);
                 return ConnectionMultiplexer.Connect(configuration);
             });
-
-            services.AddTransient<IBasketContext, BasketContext>();
-            services.AddTransient<IBasketRepository, BasketRepository>();
             services.AddSingleton<IRabbitMQConnection>(sp =>
             {
                 var factory = new ConnectionFactory
@@ -51,6 +50,10 @@ namespace Basket.API
                 };
                 return new RabbitMQConnection(factory);
             });
+            services.AddSingleton<EventBusProducer>();
+
+            services.AddTransient<IBasketContext, BasketContext>();
+            services.AddTransient<IBasketRepository, BasketRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
