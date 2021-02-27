@@ -1,11 +1,9 @@
-﻿using System;
-using Ordering.Core.Entities.Base;
+﻿using Ordering.Core.Entities.Base;
 
 namespace Ordering.Core.Entities
 {
     public class Order : Entity
     {
-        public object MyProperty { get; set; }
         public string UserName { get; set; }
         public decimal TotalPrice { get; set; }
 

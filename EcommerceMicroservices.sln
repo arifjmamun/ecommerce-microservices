@@ -20,6 +20,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus", "src\Common\EventBus\EventBus.csproj", "{A76FAF6B-6E9B-4791-86E0-6A8B33365A3D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{126895E4-7DB1-4346-8BFE-6285CF60D9C2}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ordering\README.md = src\Ordering\README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.API", "src\Ordering\Ordering.API\Ordering.API.csproj", "{511DE038-4338-4C58-9031-92AAEF80A5CC}"
 EndProject
@@ -28,6 +31,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Infrastructure", "src\Ordering\Ordering.Infrastructure\Ordering.Infrastructure.csproj", "{965B9CCE-8379-4738-9293-BCEF832D42D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Application", "src\Ordering\Ordering.Application\Ordering.Application.csproj", "{7CF5C32E-7258-49FC-B066-4030A05F31E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D12C7CB5-C6A8-4D1D-8D95-AFC910842675}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
