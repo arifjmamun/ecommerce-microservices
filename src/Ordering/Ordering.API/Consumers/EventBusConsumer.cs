@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using System.Text.Json;
 using AutoMapper;
 using EventBus;
@@ -8,6 +7,7 @@ using EventBus.Events;
 using MediatR;
 using Ordering.Application.Commands;
 using Ordering.Core.Repositories;
+using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
 namespace Ordering.API.Consumers
@@ -43,13 +43,9 @@ namespace Ordering.API.Consumers
             consumer.Received += ReceivedEvent;
 
             channel.BasicConsume(
-                queue: EventBusConstants.BasketCheckoutQueue,
-                autoAck: true,
-                consumer: consumer,
-                consumerTag: null, // todo check
-                noLocal: false,
-                exclusive: false,
-                arguments: null
+                EventBusConstants.BasketCheckoutQueue,
+                false,
+                consumer
             );
         }
 

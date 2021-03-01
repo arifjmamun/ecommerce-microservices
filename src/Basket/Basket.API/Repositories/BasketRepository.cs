@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Threading.Tasks;
 using Basket.API.Data.Interfaces;
 using Basket.API.Entities;

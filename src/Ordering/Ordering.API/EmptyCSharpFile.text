@@ -1,0 +1,32 @@
+﻿at System.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Text.UTF8Encoding.GetByteCount(String chars)
+   at RabbitMQ.Client.Framing.Impl.BasicConsume.GetRequiredBufferSize()
+   at RabbitMQ.Client.Impl.OutgoingCommand.GetMaxSize(Int32 maxPayloadBytes)
+   at RabbitMQ.Client.Impl.OutgoingCommand.Transmit(UInt16 channelNumber, Connection connection)
+   at RabbitMQ.Client.Impl.SessionBase.Transmit(OutgoingCommand& cmd)
+   at RabbitMQ.Client.Impl.ModelBase.ModelSend(MethodBase method, ContentHeaderBase header, ReadOnlyMemory`1 body)
+   at RabbitMQ.Client.Framing.Impl.Model._Private_BasicConsume(String queue, String consumerTag, Boolean noLocal, Boolean autoAck, Boolean exclusive, Boolean nowait, IDictionary`2 arguments)
+   at RabbitMQ.Client.Impl.ModelBase.BasicConsume(String queue, Boolean autoAck, String consumerTag, Boolean noLocal, Boolean exclusive, IDictionary`2 arguments, IBasicConsumer consumer)
+   at RabbitMQ.Client.Impl.AutorecoveringModel.BasicConsume(String queue, Boolean autoAck, String consumerTag, Boolean noLocal, Boolean exclusive, IDictionary`2 arguments, IBasicConsumer consumer)
+   at Ordering.API.Consumers.EventBusConsumer.Consume() in / Users / arif / Projects / EcommerceMicroservices / src / Ordering / Ordering.API / Consumers / EventBusConsumer.cs:line 44
+   at Ordering.API.Extensions.ApplicationBuilderExtensions.OnStarted() in / Users / arif / Projects / EcommerceMicroservices / src / Ordering / Ordering.API / Extensions / ApplicationBuilderExtensions.cs:line 26
+   at System.Threading.CancellationToken.<>c.<.cctor>b__26_0(Object obj)
+   at System.Threading.CancellationTokenSource.CallbackNode.<>c.<ExecuteCallback>b__9_0(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+
+
+   at System.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Text.UTF8Encoding.GetByteCount(String chars)
+   at RabbitMQ.Client.Framing.Impl.BasicConsume.GetRequiredBufferSize()
+   at RabbitMQ.Client.Impl.OutgoingCommand.GetMaxSize(Int32 maxPayloadBytes)
+   at RabbitMQ.Client.Impl.OutgoingCommand.Transmit(UInt16 channelNumber, Connection connection)
+   at RabbitMQ.Client.Impl.SessionBase.Transmit(OutgoingCommand& cmd)
+   at RabbitMQ.Client.Impl.ModelBase.ModelSend(MethodBase method, ContentHeaderBase header, ReadOnlyMemory`1 body)
+   at RabbitMQ.Client.Framing.Impl.Model._Private_BasicConsume(String queue, String consumerTag, Boolean noLocal, Boolean autoAck, Boolean exclusive, Boolean nowait, IDictionary`2 arguments)
+   at RabbitMQ.Client.Impl.ModelBase.BasicConsume(String queue, Boolean autoAck, String consumerTag, Boolean noLocal, Boolean exclusive, IDictionary`2 arguments, IBasicConsumer consumer)
+   at RabbitMQ.Client.Impl.AutorecoveringModel.BasicConsume(String queue, Boolean autoAck, String consumerTag, Boolean noLocal, Boolean exclusive, IDictionary`2 arguments, IBasicConsumer consumer)
+   at Ordering.API.Consumers.EventBusConsumer.Consume() in /Users/arif/Projects/EcommerceMicroservices/src/Ordering/Ordering.API/Consumers/EventBusConsumer.cs:line 44
+   at Ordering.API.Extensions.ApplicationBuilderExtensions.OnStarted() in /Users/arif/Projects/EcommerceMicroservices/src/Ordering/Ordering.API/Extensions/ApplicationBuilderExtensions.cs:line 26
+   at System.Threading.CancellationToken.<>c.<.cctor>b__26_0(Object obj)
+   at System.Threading.CancellationTokenSource.CallbackNode.<>c.<ExecuteCallback>b__9_0(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
