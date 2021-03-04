@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using Catalog.API.Entities;
@@ -71,7 +69,7 @@ namespace Catalog.API.Controllers
 
         [HttpDelete("{id:length(24)}")]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult> UpdateProduct(string id)
+        public async Task<ActionResult> DeleteProduct(string id)
         {
             return Ok(await _repository.Delete(id));
         }
