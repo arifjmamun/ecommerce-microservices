@@ -20,7 +20,7 @@ services:
         ports:
             - "1433:1433"
         environment:
-            SA_PASSWORD: "12345678"
+            SA_PASSWORD: "Sa@12345678"
             ACCEPT_EULA: "Y"
 
     rabbitmq:
@@ -36,7 +36,7 @@ services:
             - ASPNETCORE_ENVIRONMENT=Development
             # - ASPNETCORE_URLS=https://+:443;http://+:80
             - ASPNETCORE_URLS=http://+:80
-            - "CatalogDatabaseSettings:ConnectionString=mongodb://catalogdb:27017"
+            - "CatalogDatabaseSettings__ConnectionString=mongodb://catalogdb:27017"
         depends_on:
             - catalogdb
         ports:
@@ -52,8 +52,8 @@ services:
             - ASPNETCORE_ENVIRONMENT=Development
             # - ASPNETCORE_URLS=https://+:443;http://+:80
             - ASPNETCORE_URLS=http://+:80
-            - "ConnectionStrings:Redis=basketdb:6379"
-            - "EventBus:HostName=rabbitmq"
+            - "ConnectionStrings__Redis=basketdb:6379"
+            - "EventBus__HostName=rabbitmq"
         depends_on:
             - basketdb
             - rabbitmq
@@ -71,8 +71,8 @@ services:
             - ASPNETCORE_ENVIRONMENT=Development
             - ASPNETCORE_URLS=http://+:80
             # - ASPNETCORE_URLS=https://+:443;http://+:80
-            - "ConnectionStrings:OrderConnection=Server=orderdb;Database=OrderDb;User Id=sa;Password=sa@123456"
-            - "EventBus:HostName=rabbitmq"
+            - "ConnectionStrings__OrderConnection=Server=orderdb;Database=OrderDb;User Id=sa;Password=Sa@12345678"
+            - "EventBus__HostName=rabbitmq"
         depends_on:
             - orderdb
             - rabbitmq
