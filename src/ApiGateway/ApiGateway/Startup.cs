@@ -29,17 +29,14 @@ namespace ApiGateway
                 app.UseDeveloperExceptionPage();
             }
 
+            await app.UseOcelot();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllers();
             });
-
-            await app.UseOcelot();
         }
     }
 }

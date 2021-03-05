@@ -1,91 +1,91 @@
 ﻿{
   "ReRoutes": [
-    // Catalog API
     {
-      "DownStreamPathTemplate": "/api/v1/Catalog",
-      "DownStreamPathScheme": "http",
-      "DownStreamPathHostAndPorts": [
+      "DownstreamPathTemplate": "/api/v1/Catalog",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-          "Host": "catalogapi",
+          "Host": "catalog.api",
           "Port": "80"
         }
       ],
-      "UpStreamPathTemplate": "/Catalog",
-      "UpStreamHttpMethod": [ "GET", "POST", "PUT" ]
+      "UpstreamPathTemplate": "/Catalog",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
     },
     {
-      "DownStreamPathTemplate": "/api/v1/Catalog/{id}",
-      "DownStreamPathScheme": "http",
-      "DownStreamPathHostAndPorts": [
+      "DownstreamPathTemplate": "/api/v1/Catalog/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-          "Host": "catalogapi",
+          "Host": "catalog.api",
           "Port": "80"
         }
       ],
-      "UpStreamPathTemplate": "/Catalog/{id}",
-      "UpStreamHttpMethod": [ "GET", "DELETE" ]
+      "UpstreamPathTemplate": "/Catalog/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
-      "DownStreamPathTemplate": "/api/v1/Catalog/category/{categoryName}",
-      "DownStreamPathScheme": "http",
-      "DownStreamPathHostAndPorts": [
+      "DownstreamPathTemplate": "/api/v1/Catalog/category/{categoryName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-          "Host": "catalogapi",
+          "Host": "catalog.api",
           "Port": "80"
         }
       ],
-      "UpStreamPathTemplate": "/Catalog/category/{categoryName}",
-      "UpStreamHttpMethod": [ "GET" ]
-    },
-    // Basket API
-    {
-      "DownStreamPathTemplate": "/api/v1/Basket",
-      "DownStreamPathScheme": "http",
-      "DownStreamPathHostAndPorts": [
-        {
-          "Host": "basketapi",
-          "Port": "80"
-        }
-      ],
-      "UpStreamPathTemplate": "/Basket",
-      "UpStreamHttpMethod": [ "GET", "PUT" ]
+      "UpstreamPathTemplate": "/Catalog/category/{categoryName}",
+      "UpstreamHttpMethod": [ "GET" ]
     },
     {
-      "DownStreamPathTemplate": "/api/v1/Basket/{userName}",
-      "DownStreamPathScheme": "http",
-      "DownStreamPathHostAndPorts": [
+      "DownstreamPathTemplate": "/api/v1/Basket",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-          "Host": "basketapi",
+          "Host": "basket.api",
           "Port": "80"
         }
       ],
-      "UpStreamPathTemplate": "/Basket/{userName}",
-      "UpStreamHttpMethod": [ "DELETE" ]
+      "UpstreamPathTemplate": "/Basket",
+      "UpstreamHttpMethod": [ "GET", "PUT" ]
     },
     {
-      "DownStreamPathTemplate": "/api/v1/Basket/checkout",
-      "DownStreamPathScheme": "http",
-      "DownStreamPathHostAndPorts": [
+      "DownstreamPathTemplate": "/api/v1/Basket/{userName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-          "Host": "basketapi",
+          "Host": "basket.api",
           "Port": "80"
         }
       ],
-      "UpStreamPathTemplate": "/Basket/checkout",
-      "UpStreamHttpMethod": [ "POST" ]
+      "UpstreamPathTemplate": "/Basket/{userName}",
+      "UpstreamHttpMethod": [ "DELETE" ]
     },
-    // Ordering API
     {
-      "DownStreamPathTemplate": "/api/v1/Order",
-      "DownStreamPathScheme": "http",
-      "DownStreamPathHostAndPorts": [
+      "DownstreamPathTemplate": "/api/v1/Basket/checkout",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-          "Host": "orderingapi",
+          "Host": "basket.api",
           "Port": "80"
         }
       ],
-      "UpStreamPathTemplate": "/Order",
-      "UpStreamHttpMethod": [ "GET" ]
+      "UpstreamPathTemplate": "/Basket/checkout",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Order",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ordering.api",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Order",
+      "UpstreamHttpMethod": [ "GET" ]
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:7000"
+  }
 }

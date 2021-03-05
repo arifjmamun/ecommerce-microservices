@@ -34,23 +34,19 @@ services:
         container_name: catalogapi
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
-            # - ASPNETCORE_URLS=https://+:443;http://+:80
             - ASPNETCORE_URLS=http://+:80
             - "CatalogDatabaseSettings__ConnectionString=mongodb://catalogdb:27017"
         depends_on:
             - catalogdb
         ports:
             - "8800:80"
-            # - "39001:443"
         volumes:
-            # - ~/.aspnet/https:/root/.aspnet/https:ro
             - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
 
     basket.api:
         container_name: basketapi
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
-            # - ASPNETCORE_URLS=https://+:443;http://+:80
             - ASPNETCORE_URLS=http://+:80
             - "ConnectionStrings__Redis=basketdb:6379"
             - "EventBus__HostName=rabbitmq"
@@ -59,9 +55,7 @@ services:
             - rabbitmq
         ports:
             - "8801:80"
-            # - "443"
         volumes:
-            # - ~/.aspnet/https:/root/.aspnet/https:ro
             - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
 
     ordering.api:
@@ -70,7 +64,6 @@ services:
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
             - ASPNETCORE_URLS=http://+:80
-            # - ASPNETCORE_URLS=https://+:443;http://+:80
             - "ConnectionStrings__OrderConnection=Server=orderdb;Database=OrderDb;User Id=sa;Password=Sa@12345678"
             - "EventBus__HostName=rabbitmq"
         depends_on:
@@ -78,24 +71,18 @@ services:
             - rabbitmq
         ports:
             - "8802:80"
-            # - "443"
         volumes:
-            # - ~/.aspnet/https:/root/.aspnet/https:ro
             - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
 
     apigateway:
         container_name: apigateway
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
-            # - ASPNETCORE_URLS=https://+:443;http://+:80
-            - ASPNETCORE_URLS=http://+:80
         depends_on:
             - catalog.api
             - basket.api
             - ordering.api
         ports:
             - "7000:80"
-            # - "443"
         volumes:
-            # - ~/.aspnet/https:/root/.aspnet/https:ro
             - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
